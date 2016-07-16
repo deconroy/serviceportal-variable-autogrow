@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2016-07-16 06:28:41">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>Dan Conroy
+ServiceNow
+dan.conroy@servicenow.com
+
+In the Service Portal Service Catalog(ue), multi-line text variables do not auto expand in the same way large string fields do on the rest of the platform. This update set fixes this issue by adding a jQuery library "Non-Sucking Autogrow 1.1.1", and applying it to textarea elements.
+
+THis update set does not modify any OOTB records, but does create a relationship to the OOTB Service Catalogue widget.
+
+*jQuery Library Details:*
+ +  Non-Sucking Autogrow 1.1.1
+ + license: MIT
+ + author: Roman Pushkin
+ + https://github.com/ro31337/jquery.ns-autogrow
+
+*Included:*
+ + UI Script: jquery.ns-autogrow.min.js - this library does all the work.
+ + UI Script: sc_cat_item.textarea.autogrow.js - this script applies the above library to textarea elements on the catalog(ue) order page
+ + Widget Dependency: "Autogrow for SC Catalog Item" - packages the two above UI scripts into a widget dependency.
+ + M2M Widget Dependency to Widget: Above Widget Dependency added to OOTB "SC Catalog Item" widget.
+
+*Instructions:*
+If you are using the OOTB Service Catalog(ue) item form widget ("SC Catalog Item") then this should work right after importing the update set. Any multi-line variables on your service portal should now expand vertically as you type.
+
+If you are using a custom widget to render your catalog(ue) item forms, you will need to add the  "Autogrow for SC Catalog Item" dependency to your widget.
+
+If your custom widget is not inside an HTML element with an ID of "sc_cat_item" thenyou will need to modify the "sc_cat_item.textarea.autogrow.js" UI script. On line 7 the jQuery selector uses "#sc_cat_item textarea" - simply update this so that it selects the input fields you like.
+
+If you want this library to apply to other input fields, and apply vertical as well as (or instead of) horizontal autogrowing, then you should use the jquery.ns-autogrow.min.js library only, and look at https://github.com/ro31337/jquery.ns-autogrow for instructions on how to apply the autogrow library and how to give it options. Note that if you do this, you need to make sure that the autogrow is applied after all the initial AngularJS has loaded and your DOM is ready. For an example of how this can be done, see the sc_cat_item.textarea.autogrow.js UI script. There is probably a better way to do this than using setTimeouts... but we will get to that in v2 of this update set :-)</description>
+<inserted/>
+<name>Service Portal Multi Line Text Autogrow</name>
+<origin_sys_id/>
+<release_date/>
+<remote_sys_id>8126570b5b202200f8b9700d3237e2d5</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-07-16 06:28:41</sys_created_on>
+<sys_id>a931af0f5b202200f8b9700d3237e2ff</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-07-16 06:28:41</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>m2m_sp_dependency_js_include_aa0bdf0b5b202200f8b9700d3237e2b3</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_js_include"><m2m_sp_dependency_js_include action="INSERT_OR_UPDATE"><order>100</order><sp_dependency display_value="Autogrow">578adf0b5b202200f8b9700d3237e2af</sp_dependency><sp_js_include display_value="Minified autogrow library">26fa134b5b202200f8b9700d3237e242</sp_js_include><sys_class_name>m2m_sp_dependency_js_include</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2016-07-16 06:01:43</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>aa0bdf0b5b202200f8b9700d3237e2b3</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Autogrow.Minified autogrow library</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>m2m_sp_dependency_js_include_aa0bdf0b5b202200f8b9700d3237e2b3</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2016-07-16 06:01:43</sys_updated_on></m2m_sp_dependency_js_include></record_update>]]></payload>
+<remote_update_set display_value="Service Portal Multi Line Text Autogrow">a931af0f5b202200f8b9700d3237e2ff</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-07-16 06:28:41</sys_created_on>
+<sys_id>2d31af0f5b202200f8b9700d3237e2ff</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-07-16 06:28:41</sys_updated_on>
+<table/>
+<target_name>Autogrow.Minified autogrow library</target_name>
+<type>Dependency JS Includes</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>m2m_sp_dependency_js_include_bc3b134b5b202200f8b9700d3237e265</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_js_include"><m2m_sp_dependency_js_include action="INSERT_OR_UPDATE"><order>200</order><sp_dependency display_value="Autogrow">578adf0b5b202200f8b9700d3237e2af</sp_dependency><sp_js_include display_value="Apply autogrow to sc_cat_item textarea elements">eb0bdf0b5b202200f8b9700d3237e2b4</sp_js_include><sys_class_name>m2m_sp_dependency_js_include</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2016-07-16 06:02:24</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>bc3b134b5b202200f8b9700d3237e265</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Autogrow.Apply autogrow to sc_cat_item textarea elements</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>m2m_sp_dependency_js_include_bc3b134b5b202200f8b9700d3237e265</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2016-07-16 06:03:55</sys_updated_on></m2m_sp_dependency_js_include></record_update>]]></payload>
+<remote_update_set display_value="Service Portal Multi Line Text Autogrow">a931af0f5b202200f8b9700d3237e2ff</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-07-16 06:28:41</sys_created_on>
+<sys_id>7d31af0f5b202200f8b9700d3237e2ff</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-07-16 06:28:41</sys_updated_on>
+<table/>
+<target_name>Autogrow.Apply autogrow to sc_cat_item textarea elements</target_name>
+<type>Dependency JS Includes</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>m2m_sp_widget_dependency_a99c534b5b202200f8b9700d3237e275</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency"><m2m_sp_widget_dependency action="INSERT_OR_UPDATE"><sp_dependency display_value="Autogrow">578adf0b5b202200f8b9700d3237e2af</sp_dependency><sp_widget display_value="SC Catalog Item">0fd6a6f247230200ba13a5554ee490b3</sp_widget><sys_class_name>m2m_sp_widget_dependency</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2016-07-16 06:08:28</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>a99c534b5b202200f8b9700d3237e275</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Autogrow.SC Catalog Item</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>m2m_sp_widget_dependency_a99c534b5b202200f8b9700d3237e275</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2016-07-16 06:08:28</sys_updated_on></m2m_sp_widget_dependency></record_update>]]></payload>
+<remote_update_set display_value="Service Portal Multi Line Text Autogrow">a931af0f5b202200f8b9700d3237e2ff</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-07-16 06:28:41</sys_created_on>
+<sys_id>bd31af0f5b202200f8b9700d3237e2ff</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-07-16 06:28:41</sys_updated_on>
+<table/>
+<target_name>Autogrow.SC Catalog Item</target_name>
+<type>Widget Dependency</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_dependency_578adf0b5b202200f8b9700d3237e2af</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_dependency"><sp_dependency action="INSERT_OR_UPDATE"><module/><name>Autogrow for SC Catalog Item</name><page_load>false</page_load><sys_class_name>sp_dependency</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2016-07-16 06:01:17</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>578adf0b5b202200f8b9700d3237e2af</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Autogrow for SC Catalog Item</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_dependency_578adf0b5b202200f8b9700d3237e2af</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2016-07-16 06:08:36</sys_updated_on></sp_dependency></record_update>]]></payload>
+<remote_update_set display_value="Service Portal Multi Line Text Autogrow">a931af0f5b202200f8b9700d3237e2ff</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-07-16 06:28:41</sys_created_on>
+<sys_id>fd31af0f5b202200f8b9700d3237e2ff</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-07-16 06:28:41</sys_updated_on>
+<table/>
+<target_name>Autogrow for SC Catalog Item</target_name>
+<type>Widget Dependency</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_js_include_26fa134b5b202200f8b9700d3237e242</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_js_include"><sp_js_include action="INSERT_OR_UPDATE"><display_name>Minified autogrow library</display_name><source>local</source><sys_class_name>sp_js_include</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2016-07-16 06:01:42</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>26fa134b5b202200f8b9700d3237e242</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Minified autogrow library</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_ui_script display_value="jquery.ns-autogrow.min.js">f42bb2835b202200f8b9700d3237e2a2</sys_ui_script><sys_update_name>sp_js_include_26fa134b5b202200f8b9700d3237e242</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2016-07-16 06:01:42</sys_updated_on><url/></sp_js_include></record_update>]]></payload>
+<remote_update_set display_value="Service Portal Multi Line Text Autogrow">a931af0f5b202200f8b9700d3237e2ff</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-07-16 06:28:41</sys_created_on>
+<sys_id>3131ef0f5b202200f8b9700d3237e200</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-07-16 06:28:41</sys_updated_on>
+<table/>
+<target_name>Minified autogrow library</target_name>
+<type>JS Include</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_js_include_eb0bdf0b5b202200f8b9700d3237e2b4</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_js_include"><sp_js_include action="INSERT_OR_UPDATE"><display_name>Apply autogrow to sc_cat_item textarea elements</display_name><source>local</source><sys_class_name>sp_js_include</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2016-07-16 06:02:24</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>eb0bdf0b5b202200f8b9700d3237e2b4</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Apply autogrow to sc_cat_item textarea elements</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_ui_script display_value="sc_cat_item.textarea.autogrow.js">328efe835b202200f8b9700d3237e261</sys_ui_script><sys_update_name>sp_js_include_eb0bdf0b5b202200f8b9700d3237e2b4</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2016-07-16 06:02:24</sys_updated_on><url/></sp_js_include></record_update>]]></payload>
+<remote_update_set display_value="Service Portal Multi Line Text Autogrow">a931af0f5b202200f8b9700d3237e2ff</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-07-16 06:28:41</sys_created_on>
+<sys_id>7131ef0f5b202200f8b9700d3237e200</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-07-16 06:28:41</sys_updated_on>
+<table/>
+<target_name>Apply autogrow to sc_cat_item textarea elements</target_name>
+<type>JS Include</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_script_328efe835b202200f8b9700d3237e261</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_script"&gt;&lt;sys_ui_script action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;description&gt;Needs jquery.ns-autogrow.min.js to be loaded first.&amp;#13;
+&amp;#13;
+This UI script is intended to be used on the OOTB "SC Catalog Item" Service Portal widget. It should be added as a dependency, and loaded after the  jquery.ns-autogrow.min.js UI script.&amp;#13;
+&amp;#13;
+This might be improved in the future to be a bit more "configurable" and "angularised".&lt;/description&gt;&lt;global&gt;false&lt;/global&gt;&lt;name&gt;sc_cat_item.textarea.autogrow.js&lt;/name&gt;&lt;script&gt;&lt;![CDATA[(function() {
+	var log = true;
+	$(document).ready(function(){go(1)});
+	function go(tries) {
+		tries++;
+		var maxTries = 10;
+		var t = $('#sc_cat_item textarea'); //get all textarea elements in the sc_cat_item div included in the widget
+		if (!t.length) {
+			if (tries &lt; maxTries) {
+				_log("No textarea elements found! Will perform try "+tries+" in 500 ms.");
+				window.setTimeout(function() {go(tries)}, 500);
+			} else {
+				console.log("No textarea elements found! Have reached max retry limit. Aborting.");
+			}
+		} else {
+			try {
+				t.autogrow({vertical: true, horizontal: false});
+				t.css('overflow', 'hidden'); //so we don't see scrollbars momentarily when the box expands
+			} catch(e) {
+				_log("Error loading autogrow scripts. Ensure dependencies are set up correctly. Error: " + e);
+			}
+		}
+	}
+	function _log(m) {
+		if (log) console.log(m);
+	}
+})();]]&gt;&lt;/script&gt;&lt;script_name/&gt;&lt;sys_class_name&gt;sys_ui_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2016-07-16 04:01:24&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;false&lt;/sys_customer_update&gt;&lt;sys_id&gt;328efe835b202200f8b9700d3237e261&lt;/sys_id&gt;&lt;sys_mod_count&gt;24&lt;/sys_mod_count&gt;&lt;sys_name&gt;sc_cat_item.textarea.autogrow.js&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_script_328efe835b202200f8b9700d3237e261&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2016-07-16 06:14:30&lt;/sys_updated_on&gt;&lt;use_scoped_format&gt;false&lt;/use_scoped_format&gt;&lt;/sys_ui_script&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="Service Portal Multi Line Text Autogrow">a931af0f5b202200f8b9700d3237e2ff</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-07-16 06:28:41</sys_created_on>
+<sys_id>b131ef0f5b202200f8b9700d3237e200</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-07-16 06:28:41</sys_updated_on>
+<table/>
+<target_name>sc_cat_item.textarea.autogrow.js</target_name>
+<type>UI Script</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_script_f42bb2835b202200f8b9700d3237e2a2</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_script"&gt;&lt;sys_ui_script action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;description&gt;Minified JS - to see the non-minified version, go to the github reference below.&amp;#13;
+&amp;#13;
+Library Details:&amp;#13;
+&amp;#13;
+  Non-Sucking Autogrow 1.1.1&amp;#13;
+  license: MIT&amp;#13;
+  author: Roman Pushkin&amp;#13;
+  https://github.com/ro31337/jquery.ns-autogrow&lt;/description&gt;&lt;global&gt;false&lt;/global&gt;&lt;name&gt;jquery.ns-autogrow.min.js&lt;/name&gt;&lt;script&gt;&lt;![CDATA[
+(function(){var e;!function(t,l){return t.fn.autogrow=function(i){return null==i&amp;&amp;(i={}),null==i.horizontal&amp;&amp;(i.horizontal=!0),null==i.vertical&amp;&amp;(i.vertical=!0),null==i.debugx&amp;&amp;(i.debugx=-1e4),null==i.debugy&amp;&amp;(i.debugy=-1e4),null==i.debugcolor&amp;&amp;(i.debugcolor="yellow"),null==i.flickering&amp;&amp;(i.flickering=!0),null==i.postGrowCallback&amp;&amp;(i.postGrowCallback=function(){}),null==i.verticalScrollbarWidth&amp;&amp;(i.verticalScrollbarWidth=e()),i.horizontal!==!1||i.vertical!==!1?this.filter("textarea").each(function(){var e,n,r,o,a,c,d;return e=t(this),e.data("autogrow-enabled")?void 0:(e.data("autogrow-enabled"),a=e.height(),c=e.width(),o=1*e.css("lineHeight")||0,e.hasVerticalScrollBar=function(){return e[0].clientHeight&lt;e[0].scrollHeight},n=t('&lt;div class="autogrow-shadow"&gt;&lt;/div&gt;').css({position:"absolute",display:"inline-block","background-color":i.debugcolor,top:i.debugy,left:i.debugx,"max-width":e.css("max-width"),padding:e.css("padding"),fontSize:e.css("fontSize"),fontFamily:e.css("fontFamily"),fontWeight:e.css("fontWeight"),lineHeight:e.css("lineHeight"),resize:"none","word-wrap":"break-word"}).appendTo(document.body),i.horizontal===!1?n.css({width:e.width()}):(r=e.css("font-size"),n.css("padding-right","+="+r),n.normalPaddingRight=n.css("padding-right")),d=function(t){return function(l){var r,d,s;return d=t.value.replace(/&amp;/g,"&amp;amp;").replace(/&lt;/g,"&amp;lt;").replace(/&gt;/g,"&amp;gt;").replace(/\n /g,"&lt;br/&gt;&amp;nbsp;").replace(/"/g,"&amp;quot;").replace(/'/g,"&amp;#39;").replace(/\n$/,"&lt;br/&gt;&amp;nbsp;").replace(/\n/g,"&lt;br/&gt;").replace(/ {2,}/g,function(e){return Array(e.length-1).join("&amp;nbsp;")+" "}),/(\n|\r)/.test(t.value)&amp;&amp;(d+="&lt;br /&gt;",i.flickering===!1&amp;&amp;(d+="&lt;br /&gt;")),n.html(d),i.vertical===!0&amp;&amp;(r=Math.max(n.height()+o,a),e.height(r)),i.horizontal===!0&amp;&amp;(n.css("padding-right",n.normalPaddingRight),i.vertical===!1&amp;&amp;e.hasVerticalScrollBar()&amp;&amp;n.css("padding-right","+="+i.verticalScrollbarWidth+"px"),s=Math.max(n.outerWidth(),c),e.width(s)),i.postGrowCallback(e)}}(this),e.change(d).keyup(d).keydown(d),t(l).resize(d),d())}):void 0}}(window.jQuery,window),e=function(){var e,t,l,i;return e=document.createElement("p"),e.style.width="100%",e.style.height="200px",t=document.createElement("div"),t.style.position="absolute",t.style.top="0px",t.style.left="0px",t.style.visibility="hidden",t.style.width="200px",t.style.height="150px",t.style.overflow="hidden",t.appendChild(e),document.body.appendChild(t),l=e.offsetWidth,t.style.overflow="scroll",i=e.offsetWidth,l===i&amp;&amp;(i=t.clientWidth),document.body.removeChild(t),l-i}}).call(this);]]&gt;&lt;/script&gt;&lt;script_name/&gt;&lt;sys_class_name&gt;sys_ui_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2016-07-16 03:44:20&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;false&lt;/sys_customer_update&gt;&lt;sys_id&gt;f42bb2835b202200f8b9700d3237e2a2&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;jquery.ns-autogrow.min.js&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_script_f42bb2835b202200f8b9700d3237e2a2&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2016-07-16 05:57:50&lt;/sys_updated_on&gt;&lt;use_scoped_format&gt;false&lt;/use_scoped_format&gt;&lt;/sys_ui_script&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="Service Portal Multi Line Text Autogrow">a931af0f5b202200f8b9700d3237e2ff</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-07-16 06:28:41</sys_created_on>
+<sys_id>f131ef0f5b202200f8b9700d3237e200</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-07-16 06:28:41</sys_updated_on>
+<table/>
+<target_name>jquery.ns-autogrow.min.js</target_name>
+<type>UI Script</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
